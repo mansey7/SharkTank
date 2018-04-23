@@ -16,3 +16,4 @@ public class Load {
         this.image = Util.loadImage(imagePath);
     }
 }
+
