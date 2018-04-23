@@ -1,6 +1,4 @@
 import java.awt.Image;
-import java.awt.event.KeyEvent;
-import java.awt.geom.AffineTransform;
 
 public class Shark {
 
@@ -14,8 +12,11 @@ public class Shark {
     public double yvel;
     public double gravity;
 
+    private int jumpDelay;
+    private double rotation;
 
+    private Image image;
+    private Keyboard keyboard;
 
-
-
+    
 }
