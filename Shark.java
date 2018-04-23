@@ -1,4 +1,6 @@
 import java.awt.Image;
+import java.awt.event.KeyEvent;
+import java.awt.geom.AffineTransform;
 
 public class Shark {
 
@@ -18,5 +20,19 @@ public class Shark {
     private Image image;
     private Keyboard keyboard;
 
-    
+    //declaring the shark constructor
+    public Shark() {
+        x = 100;
+        y = 150;
+        yvel = 0;
+        width = 45;
+        height = 32;
+        gravity = 0.5;
+        jumpDelay = 0;
+        rotation = 0.0;
+        dead = false;
+
+       
+    }
+
 }
