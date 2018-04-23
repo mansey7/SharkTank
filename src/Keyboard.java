@@ -7,5 +7,9 @@ public class Keyboard implements KeyListener {
     private static Keyboard instance;
 
     private boolean[] keys;
+    
+      private Keyboard() {
+        keys = new boolean[256];
+    }
   
 }
