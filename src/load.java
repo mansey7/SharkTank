@@ -9,3 +9,10 @@ public class Load {
 
     public Load() {
     }
+    
+    public Load(int x, int y, String imagePath) {//function to load images onto screen
+        this.x = x;
+        this.y = y;
+        this.image = Util.loadImage(imagePath);
+    }
+}
