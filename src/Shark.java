@@ -20,7 +20,6 @@ public class Shark {
     private Image image;
     private Keyboard keyboard;
 
-    //declaring the shark constructor
     public Shark() {
         x = 100;
         y = 150;
@@ -32,7 +31,44 @@ public class Shark {
         rotation = 0.0;
         dead = false;
 
-       
+        keyboard = Keyboard.getInstance();
     }
 
+    public void update() {
+        yvel += gravity;
+
+        if (jumpDelay > 0)
+            jumpDelay--;
+
+        if (!dead && keyboard.isDown(KeyEvent.VK_SPACE) && jumpDelay <= 0) {
+            yvel = -7;
+            jumpDelay = 5;
+        }
+
+        y += (int)yvel;
+    }
+
+    public Load getLoad() {
+        Load r = new Load();
+        r.x = x;
+        r.y = y;
+
+        if (image == null) {
+            image = Util.loadImage("lib/Shark.png");     
+        }
+        r.image = image;
+
+        rotation = (90 * (yvel + 20) / 20) - 90;
+        rotation = rotation * Math.PI / 180;
+
+        if (rotation > Math.PI / 2)
+            rotation = Math.PI / 2;
+
+        r.transform = new AffineTransform();
+        r.transform.translate(x + width / 2, y + height / 2);
+        r.transform.rotate(rotation);
+        r.transform.translate(-width / 2, -height / 2);
+
+        return r;
+    }
 }
