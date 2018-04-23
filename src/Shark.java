@@ -20,7 +20,6 @@ public class Shark {
     private Image image;
     private Keyboard keyboard;
 
-    //declaring the shark constructor
     public Shark() {
         x = 100;
         y = 150;
@@ -32,7 +31,21 @@ public class Shark {
         rotation = 0.0;
         dead = false;
 
-       
+        keyboard = Keyboard.getInstance();
+    }
+
+    public void update() {
+        yvel += gravity;
+
+        if (jumpDelay > 0)
+            jumpDelay--;
+
+        if (!dead && keyboard.isDown(KeyEvent.VK_SPACE) && jumpDelay <= 0) {
+            yvel = -7;
+            jumpDelay = 5;
+        }
+
+        y += (int)yvel;
     }
 
 }
