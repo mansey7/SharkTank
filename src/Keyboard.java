@@ -32,5 +32,16 @@ public class Keyboard implements KeyListener {
             keys[e.getKeyCode()] = false;
         }
     }
+    
+    public void keyTyped(KeyEvent e) {}
+
+    public boolean isDown(int key) {
+
+        if (key >= 0 && key < keys.length) {
+            return keys[key];
+        }
+        
+        return false;
+    }
   
 }
