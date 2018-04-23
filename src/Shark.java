@@ -48,4 +48,27 @@ public class Shark {
         y += (int)yvel;
     }
 
+    public Load getLoad() {
+        Load r = new Load();
+        r.x = x;
+        r.y = y;
+
+        if (image == null) {
+            image = Util.loadImage("lib/Shark.png");     
+        }
+        r.image = image;
+
+        rotation = (90 * (yvel + 20) / 20) - 90;
+        rotation = rotation * Math.PI / 180;
+
+        if (rotation > Math.PI / 2)
+            rotation = Math.PI / 2;
+
+        r.transform = new AffineTransform();
+        r.transform.translate(x + width / 2, y + height / 2);
+        r.transform.rotate(rotation);
+        r.transform.translate(-width / 2, -height / 2);
+
+        return r;
+    }
 }
