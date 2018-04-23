@@ -11,5 +11,14 @@ public class Keyboard implements KeyListener {
       private Keyboard() {
         keys = new boolean[256];
     }
+    
+    public static Keyboard getInstance() {
+
+        if (instance == null) {
+            instance = new Keyboard();
+        }
+        
+        return instance;
+    }
   
 }
