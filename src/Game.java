@@ -25,6 +25,7 @@ public class Game {
         if (gameover)
             return;
          moveSeaweeds();
+        checkYoSelfBeforeYoWreckYoself();
       }
     
     public void restart() {//resets all the variables , ready for new start of game
@@ -94,6 +95,28 @@ public class Game {
         for (Seaweed seaweed : seaweeds) {
         	seaweed.update();
         }
+    }
+    
+      private void checkYoSelfBeforeYoWreckYoself() {
+    	
+        for (Seaweed seaweed : seaweeds) {
+            if (seaweed.collides(shark.x, shark.y, shark.width, shark.height)) {// calls the collision function
+                gameover = true;
+                shark.dead = true;
+            }
+            else if (shark.x > seaweed.x +100 && seaweed.position.equalsIgnoreCase("south") ) {//updates the score if there was no collision
+                score++;
+                
+              
+            
+        }
+
+        // Seabed + shark collision
+        if (shark.y + shark.height > App.HEIGHT - 80) {
+            gameover = true;
+            shark.y = App.HEIGHT - 80 - shark.height;
+        }
+    }
     }
     
 }
