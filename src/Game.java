@@ -2,12 +2,21 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
 public class Game {
+    
+    public static final int SEAWEED_DELAY = 100;
+    
+    private int restartDelay;
+    private int seaweedDelay;
     private Shark shark;
+    
     private Keyboard keyboard;
+    private ArrayList<Seaweed> seaweeds;
 
     public int score;
+    public int val;
     public Boolean gameover;
     public Boolean started;
+    public Boolean win;
 
     public Game() {
         keyboard = Keyboard.getInstance();
@@ -21,9 +30,15 @@ public class Game {
 
         shark.update();// calls function to update the shark position on screen
         watchForReset();
-
+        val = score;
+        if(val == 5) {// this checks the score value and if it is 5 displays the win screen
+        	gameover = true;
+        	win = true;}
         if (gameover)
             return;
+        if(win)
+        	return;
+        
          moveSeaweeds();
         checkYoSelfBeforeYoWreckYoself();
       }
@@ -32,6 +47,7 @@ public class Game {
       
         started = false;
         gameover = false;
+        win = false;
 
         score = 0;
  
@@ -47,6 +63,7 @@ public class Game {
             started = true;
         }
     }
+    
     private void watchForReset() {
         if (restartDelay > 0)
             restartDelay--;//decrements the restart time
@@ -57,6 +74,17 @@ public class Game {
             return;
         }
     }
+    
+      public ArrayList<Load> getLoads() {
+        ArrayList<Load> loads = new ArrayList<Load>();
+        loads.add(new Load(0, 0, "lib/background.png"));
+        for (Seaweed seaweed : seaweeds)
+            loads.add(seaweed.getLoad());
+        //loads.add(new Load(0, 0, "lib/foreground.png"));
+        loads.add(shark.getLoad());
+        return loads;
+    }
+    
     private void moveSeaweeds() {
         seaweedDelay--;
         if (seaweedDelay < 0) {
