@@ -12,5 +12,10 @@ public class Seaweed {
 
     private Image image;
 
-    
+    public Seaweed(String position) {
+        this.position = position;
+        reset();
+    }
+
+  
 }
