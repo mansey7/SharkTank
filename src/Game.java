@@ -24,5 +24,9 @@ public class Game {
         if (gameover)
             return;
       }
-    
+    private void watchForStart() {
+        if (!started && keyboard.isDown(KeyEvent.VK_SPACE)) {
+            started = true;
+        }
+    }
 }
