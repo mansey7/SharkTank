@@ -22,7 +22,7 @@ public class Shark {
 
     public Shark() {
         x = 100;
-        y = 150;
+        y = (int)(Math.random()*401) + 40;//sets shark to come at a random position in the screen of range y = (60,440)
         yvel = 0;
         width = 45;
         height = 32;
