@@ -30,7 +30,8 @@ public class Seaweed {
     public void update() {
         x -= speed;
     }
-
+    
+    //takes in the parameters of the shark and checks thm against the seaweed for direct hits
     public boolean collides(int _x, int _y, int _width, int _height) {
 
         
