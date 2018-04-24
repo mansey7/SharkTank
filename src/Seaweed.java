@@ -47,5 +47,16 @@ public class Seaweed {
         return false;
     }
 
+    public Load getLoad() {
+        Load r = new Load();
+        r.x = x;
+        r.y = y;
 
+        if (image == null) {
+            image = Util.loadImage("lib/seaweed-" + position + ".png");
+        }
+        r.image = image;
+
+        return r;
+    }
 }
