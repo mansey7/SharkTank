@@ -17,5 +17,19 @@ public class Seaweed {
         reset();
     }
 
-  
+    public void reset() {
+        width = 66;
+        height = 400;
+        x = App.WIDTH + 2;
+
+        if (position.equals("south")) {
+            y = -(int)(Math.random() * 120) - height / 2;
+        }
+    }
+
+    public void update() {
+        x -= speed;
+    }
+
+   
 }
