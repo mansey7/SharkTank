@@ -31,5 +31,21 @@ public class Seaweed {
         x -= speed;
     }
 
-   
+    public boolean collides(int _x, int _y, int _width, int _height) {
+
+        
+
+        if (_x + _width > x && _x < x + width) {
+
+            if (position.equals("south") && _y < y + height) {
+                return true;
+            } else if (position.equals("north") && _y + _height > y) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
 }
