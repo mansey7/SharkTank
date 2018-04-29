@@ -6,7 +6,7 @@ The aim of SharkTank is to navigate the shark through the field of seaweed. The 
 
 The game is coded in Java and we used Eclipse to run it as we decided this was the best.
  
-After deciding on what our project was going to be , me and Luke both sat down and planned out how to code the project, we decided to organise the game into different files for each object as this would make it easier to code and less messy. We planned out all the functions necessary for the game and then began coding. Luke coded the two object files  Shark and Seaweed , while i got to work on all the images and editing in GIMP, then i coded the Load function to loadthe images on the screen. I coded the Game file which is the main running of the game and Luke helped as we figured out the functions together. Luke coded the app file whic is for the game to launch and i coded the GamePanel function, which is for displaying all the options and info to the user.
+After deciding on what our project was going to be , me and Luke both sat down and planned out how to code the project, we decided to organise the game into different files for each object as this would make it easier to code and less messy. We planned out all the functions necessary for the game and then began coding. Luke coded the two object files  Shark and Seaweed , while i got to work on all the images and editing in GIMP, then i coded the Load function to load the images on the screen. I coded the Game file which is the main running of the game and Luke helped as we figured out the functions together. Luke coded the app file which is for the game to launch and i coded the GamePanel function, which is for displaying all the options and info to the user.
 
 https://www.youtube.com/watch?v=RwfbMivSzWg
 
