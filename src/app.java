@@ -1,7 +1,8 @@
 import javax.swing.*;
 
 public class App {
-
+    
+    //sets the size of the app screen
     public static int WIDTH = 500;
     public static int HEIGHT = 500;
     
