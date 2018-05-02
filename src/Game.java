@@ -118,7 +118,7 @@ public class Game {
                 southSeaweed.reset();
             }
             //sets the distance between the seaweeds
-            northSeaweed.y = southSeaweed.y + southSeaweed.height + 175;
+            northSeaweed.y = southSeaweed.y + southSeaweed.height + 140;
         }//calls function to move seaweed
         for (Seaweed seaweed : seaweeds) {
         	seaweed.update();
