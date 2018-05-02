@@ -30,7 +30,11 @@ public class GamePanel extends JPanel implements Runnable {
         if (!game.started) {
             g2D.setFont(new Font("TimesRoman", Font.PLAIN, 20));
             g2D.drawString("Press SPACE to start", 150, 240);
+            g2D.setColor(Color.BLACK);
+            g2D.setFont(new Font("TimesRoman", Font.BOLD, 60));
+            g2D.drawString("Shark Tank", 100, 40);
         } else {
+            g2D.setColor(Color.WHITE);
             g2D.setFont(new Font("TimesRoman", Font.PLAIN, 24));
             g2D.drawString(Integer.toString(game.score), 10, 445);
         }
