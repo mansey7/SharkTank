@@ -33,7 +33,8 @@ public class Shark {
 
         keyboard = Keyboard.getInstance();
     }
-
+    
+    //refreshes the sharks position
     public void update() {
         yvel += gravity;
 
