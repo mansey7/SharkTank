@@ -37,7 +37,7 @@ public class GamePanel extends JPanel implements Runnable {
 
         if (game.gameover && !game.win) {
         	g2D.setColor(Color.RED);
-            g2D.setFont(new Font("TimesRoman", Font.PLAIN, 60));
+            g2D.setFont(new Font("TimesRoman", Font.BOLD, 60));
             g2D.drawString("WASTED", 115, 60);
             g2D.setColor(Color.WHITE);
             g2D.setFont(new Font("TimesRoman", Font.PLAIN, 40));
